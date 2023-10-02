@@ -2,7 +2,7 @@ CREATE TABLE veiculo(
     id bigint not null auto_increment,
     proprietario_id bigint not null,
     marca varchar(20) not null,
-    model varchar(20) not null,
+    modelo varchar(20) not null,
     placa varchar(7) not null,
     status varchar(20) not null,
     data_cadastro datetime not null,

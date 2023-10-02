@@ -20,6 +20,10 @@ public class RegistroProprietarioServiceImpl implements RegistroProprietarioServ
         this.proprietarioRepository = proprietarioRepository;
     }
 
+    public Proprietario buscar(Long proprietarioId) {
+        return proprietarioRepository.findById(proprietarioId).orElseThrow(() -> new NegocioException("Proprietario não encontrado."));
+    }
+
     @Transactional
     public Proprietario add(Proprietario proprietario) {
         boolean emailEmUso = proprietarioRepository.findByEmail(proprietario.getEmail())
